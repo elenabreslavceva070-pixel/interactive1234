@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Бухгалтерский тренажер | Продажа услуги за неденежные средства</title>
+  <title>Бухгалтерский тренажер | Продажа услуги с частичной оплатой неденежными средствами</title>
   <style>
     * {
       margin: 0;
@@ -224,70 +224,69 @@
 <body>
 <div class="trainer">
   <div class="header-with-hint">
-    <div class="title">Отражаем в учете продажу услуги, которую оплатили неденежными средствами</div>
+    <div class="title">Отражаем в учете продажу услуги с частичной оплатой неденежными средствами</div>
     <div class="hint-bulb" id="hintBulb">
       <div class="bulb-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zM9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1z"/></svg></div>
     </div>
   </div>
 
   <div class="task-brief">
-    <p><strong>Условие:</strong> Ваша компания выполняет услугу по подключению жилого комплекса к электросети за 24 млн руб. (в том числе НДС 4 327 869 руб.), себестоимость услуги 18 млн руб. Клиент платит не деньгами, а электрической подстанцией, справедливая стоимость которой 20 млн руб. (в том числе НДС 3 606 557 руб.). Отразите операции в учете.</p>
+    <p><strong>Условие:</strong> Ваша компания выполняет услугу по подключению жилого комплекса к электросети за 24 млн руб., в том числе НДС 4 327 869 руб. Себестоимость услуги — 18 млн рублей. Клиент в счет оплаты вам передает подстанцию, которую оценили в 20 млн руб., в том числе НДС 3 606 557 руб.; остаток 4 млн доплачивает денежными средствами.</p>
   </div>
 
   <table class="journal-table">
-    <thead><tr><th>Содержание операции</th><th>Дебет</th><th>Кредит</th><th>Сумма, руб.</th></tr></thead>
+    <thead>
+      <tr><th>Содержание операции</th><th>Дебет</th><th>Кредит</th><th>Сумма, руб.</th></tr>
+    </thead>
     <tbody>
-      <tr><td class="entry-desc">Отразили выручку от услуги по справедливой стоимости актива</td>
-        <td><select class="account-select" id="d1"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><select class="account-select" id="c1"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><div class="sum-display">20 000 000</div></td>
+      <tr>
+        <td class="entry-desc">Отразили выручку за услуги по подключению к электросети</td>
+        <td><select class="account-select" id="d1"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option><option value="51">51</option></select></td>
+        <td><select class="account-select" id="c1"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option><option value="51">51</option></select></td>
+        <td><div class="sum-display">24 000 000</div></td>
       </tr>
-      <tr><td class="entry-desc">Начислили НДС с выручки</td>
+      <tr>
+        <td class="entry-desc">Начислили НДС с выручки</td>
         <td><select class="account-select" id="d2"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option></select></td>
         <td><select class="account-select" id="c2"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option></select></td>
-        <td><div class="sum-display">3 606 557</div></td>
+        <td><div class="sum-display">4 327 869</div></td>
       </tr>
-      <tr><td class="entry-desc">Списали себестоимость услуги</td>
+      <tr>
+        <td class="entry-desc">Списали себестоимость услуги</td>
         <td><select class="account-select" id="d3"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option></select></td>
         <td><select class="account-select" id="c3"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option></select></td>
         <td><div class="sum-display">18 000 000</div></td>
       </tr>
-      <tr><td class="entry-desc">Уменьшили выручку на разницу между ценой услуги и активом</td>
-        <td><select class="account-select" id="d4"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option></select></td>
-        <td><select class="account-select" id="c4"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option></select></td>
+      <tr>
+        <td class="entry-desc">Приняли подстанцию к учету по справедливой стоимости без НДС</td>
+        <td><select class="account-select" id="d4"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option></select></td>
+        <td><select class="account-select" id="c4"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option></select></td>
+        <td><div class="sum-display">16 393 443</div></td>
+      </tr>
+      <tr>
+        <td class="entry-desc">Отразили входной НДС по подстанции</td>
+        <td><select class="account-select" id="d5"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option></select></td>
+        <td><select class="account-select" id="c5"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option></select></td>
+        <td><div class="sum-display">3 606 557</div></td>
+      </tr>
+      <tr>
+        <td class="entry-desc">Зачли встречные требования (подстанция)</td>
+        <td><select class="account-select" id="d6"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option></select></td>
+        <td><select class="account-select" id="c6"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option></select></td>
+        <td><div class="sum-display">20 000 000</div></td>
+      </tr>
+      <tr>
+        <td class="entry-desc">Клиент доплатил разницу</td>
+        <td><select class="account-select" id="d7"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option><option value="51">51</option></select></td>
+        <td><select class="account-select" id="c7"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option><option value="60">60</option><option value="51">51</option></select></td>
         <td><div class="sum-display">4 000 000</div></td>
-      </tr>
-      <tr><td class="entry-desc">Скорректировали НДС с выручки</td>
-        <td><select class="account-select" id="d5"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option></select></td>
-        <td><select class="account-select" id="c5"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option></select></td>
-        <td><div class="sum-display">721 311</div></td>
-      </tr>
-      <tr><td class="entry-desc">Приняли подстанцию к учету по справедливой стоимости без НДС</td>
-        <td><select class="account-select" id="d6"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><select class="account-select" id="c6"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><div class="sum-display">16 393 443</div></td>
-      </tr>
-      <tr><td class="entry-desc">Отражение входного НДС по подстанции</td>
-        <td><select class="account-select" id="d7"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><select class="account-select" id="c7"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><div class="sum-display">3 606 557</div></td>
-      </tr>
-      <tr><td class="entry-desc">Списали затраты на подстанцию в ОС</td>
-        <td><select class="account-select" id="d8"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><select class="account-select" id="c8"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><div class="sum-display">16 393 443</div></td>
-      </tr>
-      <tr><td class="entry-desc">Отразили вычет по НДС</td>
-        <td><select class="account-select" id="d9"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><select class="account-select" id="c9"><option value="" disabled selected>—</option><option value="62.01">62.01</option><option value="90.01">90.01</option><option value="90.03">90.03</option><option value="68.02">68.02</option><option value="90.02">90.02</option><option value="20">20</option><option value="08.03">08.03</option><option value="19.03">19.03</option><option value="01.01">01.01</option></select></td>
-        <td><div class="sum-display">3 606 557</div></td>
       </tr>
     </tbody>
   </table>
 
   <div><button class="check-btn" id="checkBtn">Проверить</button></div>
   <div class="status-message" id="statusMsg"></div>
-  <footer>Выберите корреспонденцию счетов для каждой операции. Суммы зафиксированы. Верные ответы подсветятся зелёным.</footer>
+  <footer>Выберите корреспонденцию счетов для каждой операции. Верные ответы подсветятся зелёным.</footer>
 </div>
 
 <!-- Модалка с правильными ответами -->
@@ -298,17 +297,17 @@
       <button class="close-modal" id="closeModalBtn">&times;</button>
     </div>
     <table class="hint-table">
-      <thead><tr><th>Операция</th><th>Дебет</th><th>Кредит</th><th>Сумма</th></tr></thead>
+      <thead>
+        <tr><th>Операция</th><th>Дебет</th><th>Кредит</th><th>Сумма</th></tr>
+      </thead>
       <tbody>
-        <tr><td>Отразили выручку от услуги по справедливой стоимости актива</td><td>62.01</td><td>90.01</td><td>20 000 000</td></tr>
-        <tr><td>Начислили НДС с выручки</td><td>90.03</td><td>68.02</td><td>3 606 557</td></tr>
+        <tr><td>Отразили выручку за услуги по подключению к электросети</td><td>62.01</td><td>90.01</td><td>24 000 000</td></tr>
+        <tr><td>Начислили НДС с выручки</td><td>90.03</td><td>68.02</td><td>4 327 869</td></tr>
         <tr><td>Списали себестоимость услуги</td><td>90.02</td><td>20</td><td>18 000 000</td></tr>
-        <tr><td>Уменьшили выручку на разницу между ценой услуги и активом</td><td>90.01</td><td>62.01</td><td>4 000 000</td></tr>
-        <tr><td>Скорректировали НДС с выручки</td><td>90.03</td><td>68.02</td><td>721 311</td></tr>
-        <tr><td>Приняли подстанцию к учету по справедливой стоимости без НДС</td><td>08.03</td><td>62.01</td><td>16 393 443</td></tr>
-        <tr><td>Отражение входного НДС по подстанции</td><td>19.03</td><td>62.01</td><td>3 606 557</td></tr>
-        <tr><td>Списали затраты на подстанцию в ОС</td><td>01.01</td><td>08.03</td><td>16 393 443</td></tr>
-        <tr><td>Отразили вычет по НДС</td><td>68.02</td><td>19.03</td><td>3 606 557</td></tr>
+        <tr><td>Приняли подстанцию к учету по справедливой стоимости без НДС</td><td>08.03</td><td>60</td><td>16 393 443</td></tr>
+        <tr><td>Отразили входной НДС по подстанции</td><td>19.03</td><td>60</td><td>3 606 557</td></tr>
+        <tr><td>Зачли встречные требования (подстанция)</td><td>60</td><td>62.01</td><td>20 000 000</td></tr>
+        <tr><td>Клиент доплатил разницу</td><td>51</td><td>62.01</td><td>4 000 000</td></tr>
       </tbody>
     </table>
   </div>
@@ -319,17 +318,15 @@
     d1: "62.01", c1: "90.01",
     d2: "90.03", c2: "68.02",
     d3: "90.02", c3: "20",
-    d4: "90.01", c4: "62.01",
-    d5: "90.03", c5: "68.02",
-    d6: "08.03", c6: "62.01",
-    d7: "19.03", c7: "62.01",
-    d8: "01.01", c8: "08.03",
-    d9: "68.02", c9: "19.03"
+    d4: "08.03", c4: "60",
+    d5: "19.03", c5: "60",
+    d6: "60", c6: "62.01",
+    d7: "51", c7: "62.01"
   };
 
   function checkAll() {
     let allOk = true;
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= 7; i++) {
       const d = document.getElementById(`d${i}`);
       const c = document.getElementById(`c${i}`);
       const correctD = correct[`d${i}`];
@@ -353,7 +350,7 @@
 
   document.getElementById('checkBtn').addEventListener('click', checkAll);
 
-  for (let i = 1; i <= 9; i++) {
+  for (let i = 1; i <= 7; i++) {
     const d = document.getElementById(`d${i}`);
     const c = document.getElementById(`c${i}`);
     if (d) d.addEventListener('change', () => { d.classList.remove('valid-green','invalid-red'); document.getElementById('statusMsg').innerHTML = "Нажмите «Проверить» для оценки."; });
